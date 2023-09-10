@@ -3,7 +3,7 @@ import BottomSheet from './components/bottomsheet';
 import { useState } from 'react';
 
 function App() {
-  const [snap, setSnap] = useState('close')
+  const [snap, setSnap] = useState('')
 
   return (
     <div className={styles.App}>

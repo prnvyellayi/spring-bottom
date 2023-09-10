@@ -32,18 +32,6 @@ const BottomSheet = ({ snap }) => {
     setInitialMousePosition({ y: e.clientY });
   };
 
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-
-    const deltaY = initialMousePosition.y - e.clientY;
-
-    setPosition({
-      y: position.y - deltaY,
-    });
-
-    setInitialMousePosition({ y: e.clientY });
-  };
-
   const handleMouseUp = (e) => {
     setIsDragging(false);
     const bottom = bottomsheet.getBoundingClientRect().top;
@@ -91,11 +79,10 @@ const BottomSheet = ({ snap }) => {
         className={styles.framerDiv}
         animate={position}
         drag={'y'}
-        dragConstraints={{ top: "71.5vh" }}
+        dragConstraints={{ top: -500, bottom: 0 }}
         transition={{ type: "spring" }}
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
-        onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onTouchEnd={handleTouchEnd}
         id="bottomsheet"
