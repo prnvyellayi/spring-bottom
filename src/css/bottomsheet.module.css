@@ -1,0 +1,44 @@
+.bottomsheet {
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  top: 96.5vh;
+  justify-content: center;
+  align-items: center;
+  transition: 'transform 0.3s ease-in-out, bottom 0.3s ease-in-out',
+}
+
+.bottomdragger {
+  width: 98%;
+  background-color: rgb(162, 161, 161);
+  height: 25px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.bottomcontent {
+  width: 100%;
+  background-color: #48a2bb;
+}
+
+.line {
+  width: 5%;
+  border-top: 2px solid white;
+  margin-top: 3px;
+}
+
+@keyframes bottomSpring {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
