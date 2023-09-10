@@ -18,7 +18,7 @@ function App() {
           Swipe up the bottom sheet to know how I implemented it without libraries ;)
         </p>
       </div>
-      <BottomSheet />
+      <BottomSheet  />
     </div>
   );
 }

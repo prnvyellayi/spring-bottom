@@ -1,13 +1,18 @@
 .bottomsheet {
-  position: fixed;
+  /* position: fixed; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 100%;
-  top: 96.5vh;
   justify-content: center;
   align-items: center;
-  transition: 'transform 0.3s ease-in-out, bottom 0.3s ease-in-out',
+}
+
+.framerDiv {
+    width: 100%;
+    padding-top: 25vh;
+    position: fixed;
+    top: 71.5vh;
 }
 
 .bottomdragger {
@@ -26,6 +31,7 @@
 .bottomcontent {
   width: 100%;
   background-color: #48a2bb;
+  height: 100vh;
 }
 
 .line {
@@ -33,12 +39,3 @@
   border-top: 2px solid white;
   margin-top: 3px;
 }
-
-@keyframes bottomSpring {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
