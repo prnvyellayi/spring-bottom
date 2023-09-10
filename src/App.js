@@ -17,8 +17,19 @@ function App() {
     setSnap('full')
   }
 
+  const handleKeyPess = (e) => {
+    console.log(e.key)
+    if(e.key === 'x') {
+      setSnap('close')
+    } else if (e.key === 'h') {
+      setSnap('half')
+    } else if (e.key === 'f') {
+      setSnap('full')
+    }
+  }
+
   return (
-    <div className={styles.App}>
+    <div className={styles.App} tabIndex={0} onKeyDown={handleKeyPess}>
       <div className={styles.heading}>
         <span>SPRING BOTTOM SHEET</span>
         <div className={styles.header}>
