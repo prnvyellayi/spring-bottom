@@ -14,8 +14,9 @@
   position: relative;
 }
 
-.header {
+.heading {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -24,6 +25,23 @@
   color: white;
   font-weight: bold;
   font-size: 32px;
+  z-index: 30;
+}
+
+.header {
+  font-size: 18px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  gap: 10px
+}
+
+.headbutton {
+  border-radius: 6px;
+  background-color: white;
+  font-weight: bold;
 }
 
 .contentdiv {

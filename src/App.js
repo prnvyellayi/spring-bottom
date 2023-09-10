@@ -1,10 +1,21 @@
 import styles from './css/App.module.css';
 import BottomSheet from './components/bottomsheet';
+import { useState } from 'react';
 
 function App() {
+  const [snap, setSnap] = useState('close')
+
   return (
     <div className={styles.App}>
-      <span className={styles.header}>SPRING BOTTOM SHEET</span>
+      <div className={styles.heading}>
+        <span>SPRING BOTTOM SHEET</span>
+        <div className={styles.header}>
+        <span>Adjust size of sheet:</span>
+        <button className={styles.headbutton} onClick={() => setSnap('close')}>Close</button>
+        <button className={styles.headbutton} onClick={() => setSnap('half')}>Half</button>
+        <button className={styles.headbutton} onClick={() => setSnap('full')}>Full</button>
+        </div>
+      </div>
       <div className={styles.contentdiv}>
         <p className={styles.para}>
           This is an assignment to show case that bottom sheets can be implemented with pure javascript and logics.<br /><br />
@@ -18,7 +29,7 @@ function App() {
           Swipe up the bottom sheet to know how I implemented it without libraries ;)
         </p>
       </div>
-      <BottomSheet  />
+      <BottomSheet snap={snap} />
     </div>
   );
 }
