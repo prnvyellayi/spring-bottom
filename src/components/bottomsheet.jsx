@@ -2,7 +2,7 @@ import styles from "../css/bottomsheet.module.css";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const BottomSheet = ({ snap }) => {
+const BottomSheet = ({ snap, close, half, full }) => {
   const height = window.innerHeight;
   const bottomsheet = document.getElementById("bottomsheet");
 
@@ -39,14 +39,17 @@ const BottomSheet = ({ snap }) => {
       setPosition({
         y: 0,
       });
+      close()
     } else if (bottom < (7 * height) / 12 && bottom > height / 4) {
       setPosition({
         y: -250,
       });
+      half()
     } else if (bottom < height / 4) {
       setPosition({
         y: -500,
       });
+      full()
     }
   };
 
@@ -62,14 +65,17 @@ const BottomSheet = ({ snap }) => {
       setPosition({
         y: 0,
       });
+      close()
     } else if (bottom < (7 * height) / 12 && bottom > height / 4) {
       setPosition({
         y: -250,
       });
+      half()
     } else if (bottom < height / 4) {
       setPosition({
         y: -500,
       });
+      full()
     }
   };
 

@@ -65,3 +65,13 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 960px) {
+  .heading {
+    position: fixed;
+  }
+
+  .para {
+    font-size: 18px;
+  }
+}

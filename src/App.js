@@ -5,6 +5,18 @@ import { useState } from 'react';
 function App() {
   const [snap, setSnap] = useState('')
 
+  const setClose = () => {
+    setSnap('close')
+  }
+
+  const setHalf = () => {
+    setSnap('half')
+  }
+
+  const setFull = () => {
+    setSnap('full')
+  }
+
   return (
     <div className={styles.App}>
       <div className={styles.heading}>
@@ -29,7 +41,7 @@ function App() {
           Swipe up the bottom sheet to know how I implemented it without libraries ;)
         </p>
       </div>
-      <BottomSheet snap={snap} />
+      <BottomSheet snap={snap} close={setClose} half={setHalf} full={setFull}/>
     </div>
   );
 }
