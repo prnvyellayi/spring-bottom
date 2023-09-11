@@ -8,5 +8,7 @@ You can type 'x','h' or 'f' to close, half open or fully open the bottom sheet r
 there is a close button at the end of the bottom sheet as well
 this site is responsive as well, ie works smooth on mobile site as well
 
+You can test the bottom sheet component by typing npm test
+
 
 This site uses only one 3rd party library, framer-motion, for animation effect of the bottom sheet to snap points
