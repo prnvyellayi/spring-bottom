@@ -69,14 +69,10 @@
 @media screen and (max-width: 960px) {
   .heading {
     position: fixed;
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .para {
     font-size: 18px;
-  }
-
-  .App {
-    height: 100%;
   }
 }
