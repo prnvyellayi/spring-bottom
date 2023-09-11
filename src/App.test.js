@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import BottomSheet from './components/bottomsheet'
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  render(<BottomSheet />);
+  const linkElement = screen.getByText(/content/i);
   expect(linkElement).toBeInTheDocument();
 });
