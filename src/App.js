@@ -17,6 +17,7 @@ function App() {
     setSnap('full')
   }
 
+  
   const handleKeyPess = (e) => {
     console.log(e.key)
     if(e.key === 'x') {
