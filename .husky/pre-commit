@@ -1,8 +1,12 @@
 #!/bin/sh
+
+# Extract version bump from commit message
 commit_msg=$(git log -1 --pretty=%B)
 
-if echo "$commit_msg" | grep -qE '\[(patch|minor|major)\]'; then
-  bump_version=$(echo "$commit_msg" | grep -oE '\[(patch|minor|major)\]' | head -n 1)
-  npm version "$bump_version"
-fi
+# Extract version bump using regex
+version_bump=$(echo "$commit_msg" | grep -oE '\[(patch|minor|major)\]' | head -n 1)
 
+# If version bump is found, run npm version
+if [ -n "$version_bump" ]; then
+  npm version "$version_bump" --no-git-tag-version
+fi
