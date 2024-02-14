@@ -22,7 +22,7 @@ jobs:
       run: npm install
 
     - name: Change to package directory
-      run: cd path/to/your/package
+      run: cd ..
 
     - name: Execute pre-commit hook
       run: .husky/pre-commit
