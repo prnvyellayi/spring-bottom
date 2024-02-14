@@ -28,9 +28,16 @@ jobs:
     - name: Execute pre-commit hook
       run: .husky/pre-commit
 
-    - name: Publish to npm
-      run: |
-        echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
-        npm publish
-      env:
-        NPM_TOKEN: ${{ secrets.npm_token }}
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+        curl -sL https://deb.nodesource.com/setup_21.x | sudo -E bash -
+        sudo apt-get install -y nodejs
+        sudo npm install -g npm
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
