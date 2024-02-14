@@ -6,7 +6,23 @@ commit_msg=$(git log -1 --pretty=%B)
 # Extract version bump using regex
 version_bump=$(echo "$commit_msg" | grep -oE '\[(patch|minor|major)\]' | head -n 1)
 
-# If version bump is found, run npm version
-if [ -n "$version_bump" ]; then
-  npm version "$version_bump" --no-git-tag-version
+# If version bump is found, map it to the corresponding npm version
+case $version_bump in
+  "patch")
+    new_version="patch"
+    ;;
+  "minor")
+    new_version="minor"
+    ;;
+  "major")
+    new_version="major"
+    ;;
+  *)
+    new_version="" # No valid version bump found
+    ;;
+esac
+
+# If a valid version bump is found, run npm version
+if [ -n "$new_version" ]; then
+  npm version "$new_version" --no-git-tag-version
 fi
