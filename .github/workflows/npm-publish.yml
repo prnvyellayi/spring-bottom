@@ -16,13 +16,9 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: |
-        echo "Which version bump do you want? (patch/minor/major)"
-        read BUMP
-        npm version $BUMP
-
-    
-
+      - run: echo "Which version bump do you want? (patch/minor/major)"
+      - run: read BUMP
+      - run: npm version $BUMP
 
   publish-npm:
     needs: build
