@@ -1,0 +1,8 @@
+#!/bin/sh
+commit_msg=$(git log -1 --pretty=%B)
+
+if echo "$commit_msg" | grep -qE '\[(patch|minor|major)\]'; then
+  bump_version=$(echo "$commit_msg" | grep -oE '\[(patch|minor|major)\]' | head -n 1)
+  npm version "$bump_version"
+fi
+
