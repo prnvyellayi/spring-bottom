@@ -16,6 +16,15 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+    
+  update-version:
+    runs-on: ubuntu-latest
+    steps: 
+     - name: Manual Version Bump
+       run: |
+        echo "Which version bump do you want? (patch/minor/major)"
+        read BUMP
+        npm version $BUMP
 
   publish-npm:
     needs: build
